@@ -57,7 +57,7 @@ export default function App() {
   return (
     <main className={css.container}>
       <ContactForm />
-      <Filter />  {/* Додаємо компонент фільтра */}
+      <Filter />  
       {isLoading && <Loader>Loading message</Loader>}
       {isError && <Error>Error message</Error>}
       {contacts.length > 0 && <ContactList />}

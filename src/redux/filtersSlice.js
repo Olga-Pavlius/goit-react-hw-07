@@ -1,22 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Створюємо початковий стан для фільтра
 const initialState = {
-  name: "", // фільтр по імені контакту
+  name: "", 
 };
 
 const filtersSlice = createSlice({
   name: "filters",
   initialState,
   reducers: {
-    // Редуктор для оновлення фільтру
-    setFilter: (state, action) => {
-      state.name = action.payload; // Оновлюємо фільтр
+    changeFilter(state, action) {
+      state.name = action.payload;
     },
   },
 });
 
-export const { setFilter } = filtersSlice.actions;
+export const { changeFilter } = filtersSlice.actions;
 
-// Експортуємо редюсер для підключення до store
+export const selectNameFilter = (state) => state.filters.name;
+
 export default filtersSlice.reducer;
+
